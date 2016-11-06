@@ -1,0 +1,199 @@
+/*border-radius Start*/
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+          border-radius: $radius;
+}
+
+// Single Corner Border Radius
+@mixin border-top-left-radius($radius) {
+  -webkit-border-top-left-radius: $radius;
+          border-top-left-radius: $radius;
+}
+@mixin border-top-right-radius($radius) {
+  -webkit-border-top-right-radius: $radius;
+          border-top-right-radius: $radius;
+}
+@mixin border-bottom-right-radius($radius) {
+  -webkit-border-bottom-right-radius: $radius;
+          border-bottom-right-radius: $radius;
+}
+@mixin border-bottom-left-radius($radius) {
+  -webkit-border-bottom-left-radius: $radius;
+          border-bottom-left-radius: $radius;
+}
+
+// Single Side Border Radius
+@mixin border-top-radius($radius) {
+  @include border-top-right-radius($radius);
+  @include border-top-left-radius($radius);
+}
+@mixin border-right-radius($radius) {
+  @include border-top-right-radius($radius);
+  @include border-bottom-right-radius($radius);
+}
+@mixin border-bottom-radius($radius) {
+  @include border-bottom-right-radius($radius);
+  @include border-bottom-left-radius($radius);
+}
+@mixin border-left-radius($radius) {
+  @include border-top-left-radius($radius);
+  @include border-bottom-left-radius($radius);
+}
+/*border-radius End*/
+
+/*clearfix Start*/
+@mixin clearfix {
+  *zoom: 1;
+
+  &:after,
+  &:before {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin mini-clearfix {
+  &:after {
+    clear: both;
+    content: "\200B";
+    display: block;
+    height: 0;
+  }
+}
+/*clearfix End*/
+
+/*filter Start*/
+@mixin filter-blur($inValue:3px) {
+  -webkit-filter: blur($inValue);
+  -moz-filter: blur($inValue);
+  -ms-filter: blur($inValue);
+  filter: blur($inValue);
+}
+/*filter End*/
+
+/*flip Start*/
+@mixin flip($inValue) {
+  @if $inValue =='x' {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter:  "FlipH";
+  } @else {
+    -moz-transform: scaleY(-1);
+    -o-transform: scaleY(-1);
+    -webkit-transform: scaleY(-1);
+    transform: scaleY(-1);
+    filter: FlipV;
+    -ms-filter:  "FlipV";
+  }
+}
+/*flip End*/
+
+/*height Start*/
+@mixin hlh($inValue){
+  height: $inValue;
+  line-height: $inValue;
+}
+/*height End*/
+
+/*margin Start*/
+@mixin mt($inValue){
+  margin-top: $inValue;
+}
+@mixin mr($inValue){
+  margin-right: $inValue;
+}
+@mixin mb($inValue){
+  margin-bottom: $inValue;
+}
+@mixin ml($inValue){
+  margin-left: $inValue;
+}
+@mixin m($inValue){
+  margin: $inValue;
+}
+@mixin mx($inValue){
+  margin-left: $inValue;
+  margin-right: $inValue;
+}
+@mixin my($inValue){
+  margin-top: $inValue;
+  margin-bottom: $inValue;
+}
+/*margin End*/
+
+/*padding Start*/
+@mixin pt($inValue){
+  padding-top: $inValue;
+}
+@mixin pr($inValue){
+  padding-right: $inValue;
+}
+@mixin pb($inValue){
+  padding-bottom: $inValue;
+}
+@mixin pl($inValue){
+  padding-left: $inValue;
+}
+@mixin p($inValue){
+  padding: $inValue;
+}
+@mixin px($inValue){
+  padding-left: $inValue;
+  padding-right: $inValue;
+}
+@mixin py($inValue){
+  padding-top: $inValue;
+  padding-bottom: $inValue;
+}
+/*padding End*/
+
+/*placeholder Start*/
+@mixin placeholder($color, $text-indent: 0) {
+  &::-moz-placeholder { // Firefox 19+
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+    // Safari placeholder margin issue
+    text-indent: $text-indent;
+  }
+}
+/*placeholder End*/
+
+/*size Start*/
+@mixin size($inWidth,$inHeight:'') {
+  @if $inHeight != '' {
+    width:$inWidth;
+    height:$inHeight;
+  } @else {
+    width:$inWidth;
+    height:$inWidth;
+  }
+}
+/*size End*/
+
+/*user-select Start*/
+@mixin user-select($select) {
+  -webkit-user-select: $select;
+     -moz-user-select: $select;
+      -ms-user-select: $select;
+          user-select: $select;
+}
+/*user-select End*/
+
+/*width Start*/
+@mixin w1($inNumber){
+  width: #{100/$inNumber+'%'};
+}
+/*width End*/

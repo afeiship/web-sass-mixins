@@ -1,0 +1,24 @@
+{
+  "name": "web-sass-mixins",
+  "description": "web sass mixins.",
+  "main": "dist/web-sass-mixins.scss",
+  "authors": [
+    "afei"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "next"
+  ],
+  "homepage": "https://github.com/afeiship/web-sass-mixins",
+  "moduleType": [
+    "amd"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "src"
+  ]
+}
