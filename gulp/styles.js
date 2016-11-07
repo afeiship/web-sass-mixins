@@ -12,7 +12,7 @@
   //styles
   gulp.task('styles',function() {
     return gulp.src('src/**')
-      .pipe($.concat('webkit-sass-mixins.scss'))
+      .pipe($.concat('web-sass-mixins.scss'))
       .pipe(gulp.dest('dist'));
   });
 
